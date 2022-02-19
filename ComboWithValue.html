@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['city', 'Bolivia', { role: 'annotation'}, 'Ecuador', { role: 'annotation'}, 'Madagascar', { role: 'annotation'}, 'Charleroi', { role: 'annotation'}],
+          ['India',  165,'165',      938,'938',         522,'522',         722,'722'],
+          ['America',  135,'135',      1120,'1020',        599,'599',        799,'799'],
+          ['Australia',  157,'157',      1167,'1167',        587,'587',        787,'787'],
+          ['England',  139,'139',      1110,'1110',        615,'615',        815,'815'],
+          ['Newziland',  136,'136',      691,'691',         629,'629',         829,'829'],
+		  ['Denmark',  165,'165',      938,'938',         522,'522',         722,'722'],
+          ['Germany',  135,'135',      1120,'1020',        599,'599',        799,'799'],
+          ['Iceland',  157,'157',      1167,'1167',        587,'587',        787,'787'],
+          ['Kyrgyzstan',  139,'139',      1110,'1110',        615,'615',        815,'815'],
+          ['Luxembourg',  136,'136',      691,'691',         629,'629',         829,'829'],
+		   ['Mozambique',  139,'139',      1110,'1110',        615,'615',        815,'815'],
+          ['Papua New Guinea',  136,'136',      691,'691',         629,'629',         829,'829']
+        ]);
+       
+       
+       
+        var options = {
+		 hAxis: {
+                 
+                  textStyle: {
+                     color: '#01579b',
+                     fontSize: 15,
+                     fontName: 'Arial',
+                     bold: true,
+                     italic: true
+                  },
+               },
+			   vAxis: {
+                 
+                  textStyle: {
+                     color: '#01579b',
+                     fontSize: 15,
+                     fontName: 'Arial',
+                     bold: true,
+                     italic: true
+                  },
+               },
+          title : 'Monthly Coffee Production by Country',
+          seriesType: 'bars',
+		   legend:'none'
+       
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width:100%; height: 500px;"></div>
+  </body>
+</html>
